@@ -43,12 +43,15 @@ public class EmployeeDaoImp implements DaoEmployee {
         Scanner sc = new Scanner(System.in);
         System.out.println("Delete Employee by ID, entre Employee Id PLS");
         int byid = sc.nextInt();
-        listEmployee.forEach((e) -> {
-            int id = e.getId();
+                for(Employee e: listEmployee){
+                        int id = e.getId();
             if (id == byid) {
                 listEmployee.remove(e);
+                break;
             }
-        });//        List<Employee> employeeToRemove = new ArrayList<>();
+        }
+
+//        List<Employee> employeeToRemove = new ArrayList<>();
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Delete Employee by ID, entre Employee Id PLS");
 //        int byid = sc.nextInt();
