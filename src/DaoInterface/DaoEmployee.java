@@ -13,7 +13,18 @@ import model.Employee;
  * @author jeanl
  */
 public interface DaoEmployee {
+
     void create(Employee employee);
-    
+
+    void add(Employee employee, List<Employee> listEmployee);
+
+    void delete(Employee employee, List<Employee> listEmployee);
+
+    void update(Employee employee);
+
+    void find(Employee employee);
+
+    void print(Employee employee);
+
     List<Employee> findAll();
 }

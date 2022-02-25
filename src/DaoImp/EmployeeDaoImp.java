@@ -8,16 +8,18 @@ package DaoImp;
 import DaoInterface.DaoEmployee;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import model.Employee;
 
 /**
  *
  * @author jeanl
  */
-public class EmployeeDaoImp implements DaoEmployee{
+public class EmployeeDaoImp implements DaoEmployee {
+
     private final List<Employee> listEmployees;
-    
-    public EmployeeDaoImp(){
+
+    public EmployeeDaoImp() {
         listEmployees = new ArrayList<>();
     }
 
@@ -30,6 +32,48 @@ public class EmployeeDaoImp implements DaoEmployee{
     public List<Employee> findAll() {
         return listEmployees;
     }
-    
-    
+
+    @Override
+    public void add(Employee employee, List<Employee> listEmployee) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void delete(Employee employee, List<Employee> listEmployee) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Delete Employee by ID, entre Employee Id PLS");
+        int byid = sc.nextInt();
+        listEmployee.forEach((e) -> {
+            int id = e.getId();
+            if (id == byid) {
+                listEmployee.remove(e);
+            }
+        });//        List<Employee> employeeToRemove = new ArrayList<>();
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Delete Employee by ID, entre Employee Id PLS");
+//        int byid = sc.nextInt();
+//        listEmployees.forEach((Employee s) -> {
+//            int id = s.getId();
+//            if (id == byid) {
+//                employeeToRemove.add(s);
+//            }
+//        });
+//        listEmployees.removeAll(employeeToRemove);
+    }
+
+    @Override
+    public void update(Employee employee) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void find(Employee employee) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void print(Employee employee) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

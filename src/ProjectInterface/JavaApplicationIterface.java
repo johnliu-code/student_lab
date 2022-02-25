@@ -94,6 +94,7 @@ public class JavaApplicationIterface {
                 employeeDao.create(employee2);
 
                 List<Employee> listEmp = employeeDao.findAll();
+                employeeDao.delete(employee, listEmp);
 
                 System.out.println("Employee list");
                 System.out.println(" ID : " + "         " + " First Name : " + "         " + "Last Name : ");
